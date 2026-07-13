@@ -1,0 +1,13 @@
+%{ 
+%} 
+l [_a-zA-Z] 
+d [0-9] 
+%% 
+{l}({l}|{d})* printf("Valid Identifier"); 
+.* printf("Invalid Identifier"); 
+%% 
+int yywrap(){ } 
+int main(){ 
+printf("Identifier : "); 
+yylex(); 
+} 
